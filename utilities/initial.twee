@@ -1,0 +1,12 @@
+:: StoryCaption
+<<do>>
+  <<print $name>> <<print "\n\n">>
+
+  力：$str
+  智：$int
+  体：$con
+  魅：$app
+
+<</do>>
+:: StoryInit
+<<petSetup>>

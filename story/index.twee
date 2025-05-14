@@ -1,0 +1,27 @@
+:: StoryTitle
+坎特伯雷公爵的养鸟日志
+
+
+:: StoryData
+{
+  "ifid": "84908026-0E7E-44C4-A9D5-F2489EC6CB20",
+  "format": "SugarCube",
+  "format-version": "2.37.3",
+  "start": "开始界面",
+  "tag-colors": {
+    "noreturn": "blue",
+    "widget": "orange",
+    "script": "green"
+  },
+  "zoom": 1
+}
+
+
+:: 开始界面 {"position":"800,400","size":"100,100"}
+  <h1>坎特伯雷公爵的养鸟日志</h1>
+  <<print "\n\n">>
+  [[翻开日志]]
+
+  <<if UIBar.isStowed != true>>
+    <<run UIBar.stow()>>
+  <</if>>

@@ -1,0 +1,9 @@
+:: petSetup [widget]
+<<widget "petSetup">>
+  <<set $name = "？？？">>
+
+  <<set $str = "？">> // 力
+  <<set $int = "？">> // 智
+  <<set $con = "？">> // 体
+  <<set $app = "？">> // 魅
+<</widget>>>>
