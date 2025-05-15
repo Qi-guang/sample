@@ -9,9 +9,17 @@
 
   <<set $maxhp = $con * 5>> // 最大体力
   <<set $hp = $maxhp>>
+
+  <<set $love = 0>> // 好感度
 <</widget>>>>
 
 :: generalSetup [widget]
 <<widget "generalSetup">>
   <<set $time = 1>>
+<</widget>>
+
+:: miscSetup [widget]
+<<widget "miscSetup">>
+  <<set $introduction = true>> // 是否可以做自我介绍
+  <<set $badPlusCount = 0>> // 每个霜降期最多可以通过打招呼增加3点好感
 <</widget>>

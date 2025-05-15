@@ -16,3 +16,4 @@
 :: StoryInit
   <<petSetup>>
   <<generalSetup>>
+  <<miscSetup>>
