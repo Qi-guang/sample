@@ -2,11 +2,17 @@
 <<do>>
   <<print $name>> <<print "\n\n">>
 
-  力：$str
-  智：$int
-  体：$con
-  魅：$app
+  精力：<meter min="0" low="$maxhp*0.3" high="$maxhp*0.7" optimum="$maxhp*0.9" max="$maxhp" @value="$hp"></meter>
+  <<print "\n\n">>
+
+  力：$str <<print "\n">>
+  智：$int <<print "\n">>
+  体：$con <<print "\n">>
+  魅：$app <<print "\n">>
+
 
 <</do>>
+
 :: StoryInit
-<<petSetup>>
+  <<petSetup>>
+  <<generalSetup>>

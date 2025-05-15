@@ -1,0 +1,27 @@
+:: StoryStylesheet [stylesheet]
+  /* 进度条 */
+  meter {
+  	border: none;
+ 	  height: 20px;    /* 进度条高度 */
+	  width: 150px;     /* 进度条宽度，用于细调，可删除 */
+  }
+
+  ::-webkit-meter-bar {
+    background-color: white;  /* 进度条容器背景色 */
+    border-radius: 0px;  /* 进度条容器圆角，0px就是方条 */
+    border: 2px solid white;
+  }
+
+  ::-webkit-meter-optimum-value {
+    background-color: #ffc3c3;/* 进度条填充条最佳区间颜色，一般是绿色 */
+  }
+
+  ::-webkit-meter-suboptimum-value {
+    background-color: #ff6868;/* 进度条填充条中间区间，一般是黄色或者橙色 */
+  }
+
+  ::-webkit-meter-even-less-good-value {
+    background-color: #fd2d2d;/* 进度条填充条最低区间，一般是红色 */
+  }
+
+  /* 进度条结束 */

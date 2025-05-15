@@ -2,8 +2,16 @@
 <<widget "petSetup">>
   <<set $name = "？？？">>
 
-  <<set $str = "？">> // 力
-  <<set $int = "？">> // 智
-  <<set $con = "？">> // 体
-  <<set $app = "？">> // 魅
+  <<set $str = 5>> // 力
+  <<set $int = 5>> // 智
+  <<set $con = 5>> // 体
+  <<set $app = 5>> // 魅
+
+  <<set $maxhp = $con * 5>> // 最大体力
+  <<set $hp = $maxhp>>
 <</widget>>>>
+
+:: generalSetup [widget]
+<<widget "generalSetup">>
+  <<set $time = 1>>
+<</widget>>

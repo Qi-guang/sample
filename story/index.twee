@@ -22,6 +22,6 @@
   <<print "\n\n">>
   [[翻开日志]]
 
-  <<if UIBar.isStowed != true>>
+  <<if !UIBar.isStowed()>>
     <<run UIBar.stow()>>
   <</if>>
