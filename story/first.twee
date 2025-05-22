@@ -11,7 +11,7 @@
 
 :: 第一页
   <<type 40ms skipkey " ">>
-    <h1>第$time个霜降期</h1><<print "\n">><<print "\n">>
+    <h1>第$time个霜降期</h1><<print "\n">><<print "\n">><<set $doc = 0>>
     <<print $name>>安静地坐在笼子里的秋千上。它长长的黑色睡袍垂落到脚踝，微微低着头，不知道在想什么。<<print "\n">><<print "\n">>
 
     <div id="selection">
@@ -39,9 +39,7 @@
 
 
       <<print "\n">>
-      <<link "→ 决定干点正事" "正事">>
-        <<set $time += 1>>
-      <</link>><<print "\n">>
+      <<bookflipgoto "正事">>→ 决定干点正事<</bookflipgoto>><<print "\n">>
       此行动将推进时间至下一个霜降期。
     </div>
   <</type>>

@@ -11,6 +11,7 @@
   <<set $hp = $maxhp>>
 
   <<set $love = 0>> // 好感度
+  <<set $evil = 0>> // 善恶值
 <</widget>>>>
 
 :: generalSetup [widget]
@@ -22,6 +23,19 @@
 <<widget "miscSetup">>
   <<set $introduction = true>> // 是否可以做自我介绍
   <<set $badPlusCount = 0>> // 每个霜降期最多可以通过打招呼增加3点好感
+  <<set $eventId = 0>> // 事件反馈
+  <<set $doc = 0>> // 批阅文书次数
+
+  <<set setup.event = [
+    {
+      id: 0,
+      text: ""
+    },
+    {
+      id: 1,
+      text: "听说那位地狱犬法官的三个头在法庭上吵起来了，最终也没得出个结果，于是犯人既要坐牢又要被砍头还要被流放。"
+    }
+  ]>>
 
   <<set $stow = true>>
 <</widget>>
