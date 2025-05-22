@@ -20,7 +20,7 @@
 :: 开始界面 {"position":"800,400","size":"100,100"}
   <h1>坎特雷拉公爵的养鸟日志</h1>
   <<print "\n\n">>
-  [[翻开日志]]
+  <<bookflipgoto "翻开日志">>翻开日志<</bookflipgoto>>
 
   <<if !UIBar.isStowed()>>
     <<run UIBar.stow()>>

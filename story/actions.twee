@@ -2,9 +2,10 @@
   <<set _word = ["沉默以对。", "抖了抖耳羽作为回应。", "：“晚上好，坎特雷拉。”"]>>
   <<type 40ms skipkey " ">>
     公爵大人笑眯眯地朝$name挥了挥手：“你今天过得如何？”<<print "\n">><<print "\n">>
-    $name <<print _word.random()>>
+    $name<<print _word.random()>>
 
-    <<print "\n">><<print "\n">><<link "→ 继续" "第一页">><</link>>
+    <<print "\n">><<print "\n">>
+    <<bookflipgoto "第一页">>→ 然后……<</bookflipgoto>>
   <</type>>
 
   <<if $badPlusCount <= 3>>
@@ -19,7 +20,7 @@
     $name静静地看了他一会儿，随后迟缓地摇了摇头。<<print "\n">><<print "\n">>
     公爵大人摸了摸它的耳羽，说：“我是坎特雷拉，契约与谜语的公爵。”<<print "\n">><<print "\n">>
 
-    <<link "→ 继续" "第一页">><</link>>
+    <<bookflipgoto "第一页">>→ 然后……<</bookflipgoto>>
   <</type>>
 
   <<set $love += 1>>
@@ -27,7 +28,7 @@
 
 :: 聊天
   聊一下
-  <<print "\n">><<print "\n">><<link "→ 继续" "第一页">><</link>>
+  <<print "\n">><<print "\n">><<bookflipgoto "第一页">>→ 然后……<</bookflipgoto>>
 
 :: 正事
   干了但没完全干

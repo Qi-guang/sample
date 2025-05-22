@@ -25,3 +25,21 @@
   }
 
   /* 进度条结束 */
+
+
+  /* 翻页动画：让 passage 容器旋转 */
+  #passages {
+    perspective: 1200px;
+  }
+
+  .passage {
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    transform-origin: left center;
+  }
+
+  .page-flip {
+    transform: rotateY(-180deg);
+    opacity: 0;
+  }
+
+    /* 翻页结束 */

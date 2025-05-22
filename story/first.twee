@@ -46,6 +46,7 @@
     </div>
   <</type>>
 
-  <<if UIBar.isStowed()>>
+  <<if UIBar.isStowed() and $stow == true>>
     <<run UIBar.unstow()>>
+    <<set $stow = false>>
   <</if>>
