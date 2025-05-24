@@ -25,6 +25,7 @@
   <<set $badPlusCount = 0>> // 每个霜降期最多可以通过打招呼增加3点好感
   <<set $eventId = 0>> // 事件反馈
   <<set $doc = 0>> // 批阅文书次数
+  <<set $docNum = 10>> // 文书数量
 
   <<set setup.event = [
     {

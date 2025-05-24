@@ -55,13 +55,12 @@
       <<print "\n">>公爵大人坐在书桌前，<<if $doc == 0>>开始<<else>>继续<</if>>批阅堆积如山的文书。
       <<print "\n\n">>
       <<set $doc += 1>>
-      /* <<set _roll to random(1,10)>> */
+      /* <<set _roll to random(1, $docNum)>> */
       <<set _roll = 1>>
       <<switch _roll>>
         <<case 1>>
           <blockquote>“流浪的地狱犬闯入法庭，声称自己是上一任大法官的转世，要求恢复自己的职位。”</blockquote><<print "\n">><<print "\n">>
           <div id="selection">
-
             <<link "→ 封地狱犬做大法官">>
               <<set $eventId = 1>>
               <<replace "#selection">>
@@ -117,6 +116,69 @@
               <</replace>>
             <</link>>
         </div>
+
+        <<case 2>>
+          <blockquote>“匿名恶魔提议禁止变形魔无审批变身，表示他有一个朋友惹怒了情敌变形魔，变形魔一怒之下变成了他的理想型。”</blockquote>
+
+          <div id="selection">
+          <<link "→ 确实应该禁止">>
+              <<replace "#selection">>
+                <<type 40ms skipkey " " >>
+                  公爵大人发布了新的法案，禁止变形魔无审批变身。为此，他还宣布成立“变形魔变身审批协会”，专门负责此事。<<print "\n">><<print "\n">>
+                  $name：“那谁来负责审批的公正性呢？”<<print "\n">>
+                  公爵大人：“当然是变形魔变身审批协会审批协会啦！”<<print "\n">><<print "\n">>
+
+                  $name的智力+2<<print "\n">>
+                  $name的邪恶值+1
+
+                  <<set $int +=2>>
+                  <<set $evil +=1>>
+                  <<print "\n">><<print "\n">><<redo>>
+
+                  <<bookflipgoto "办公">>公爵大人继续处理公务。<</bookflipgoto>>
+                <</type>>
+              <</replace>>
+            <</link>><<print "\n">>
+
+            <<link "→ 什么鬼？">>
+              <<replace "#selection">>
+                <<type 40ms skipkey " " >>
+                  公爵大人质疑这份提议出现在他办公桌上的必要性。<<print "\n">>
+                  经过调查，这个恶魔买通了公爵府上的奴隶。<<print "\n">>
+                  当这段文字被写下的时候，管家大人已经在采购新奴隶的路上了。<<print "\n">><<print "\n">>
+                  $name默默地看在眼里。<<print "\n">><<print "\n">>
+
+                  $name的智力+3
+
+                  <<set $int +=3>>
+                  <<print "\n">><<print "\n">><<redo>>
+
+                  <<bookflipgoto "办公">>公爵大人继续处理公务。<</bookflipgoto>>
+                <</type>>
+              <</replace>>
+            <</link>><<print "\n">>
+
+            <<link "→ 要不你们仨结婚吧">>
+              <<replace "#selection">>
+                <<type 40ms skipkey " " >>
+                  你说的这个朋友……这不重要，公爵大人下令为这三人赐婚。<<print "\n">>
+                  只要结婚了，情敌啊理想型啊就都不重要了，不是吗？<<print "\n">><<print "\n">>
+                  $name：“那你呢，坎特雷拉？你的理想型是什么样的？”<<print "\n">><<print "\n">>
+
+                  $name的魅力+3<<print "\n">>
+                  $name的邪恶值+1
+
+                  <<set $app +=3>>
+                  <<set $evil +=1>>
+                  <<print "\n">><<print "\n">><<redo>>
+
+                  <<bookflipgoto "办公">>公爵大人继续处理公务。<</bookflipgoto>>
+                <</type>>
+              <</replace>>
+            <</link>><<print "\n">>
+
+          </div>
+
 
       <</switch>>
 
