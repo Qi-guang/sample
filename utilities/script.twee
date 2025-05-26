@@ -1,39 +1,60 @@
 :: StoryScript [script]
   Config.passages.nobr = true;
 
-Macro.add("bookflipgoto", {
-  tags: null,
-  handler() {
-    // 参数验证
-    if (this.args.length === 0) {
-      return this.error("必须提供目标 passage 名称");
+  Macro.add("bookflipgoto", {
+    tags: null,
+    handler() {
+      // 参数验证
+      if (this.args.length === 0) {
+        return this.error("必须提供目标 passage 名称");
+      }
+      const target = this.args[0];
+
+      // 创建链接的核心方法
+      const link = document.createElement("a");
+      link.href = "javascript:;";
+      link.className = "link-internal bookflip-link";
+
+      // 关键修复点：正确获取内容
+      link.innerHTML = this.payload[0].contents;
+
+      // 点击事件处理
+      link.addEventListener("click", () => {
+        const $passage = $(document).find(".passage:visible");
+
+        // 触发翻页动画
+        $passage.addClass("page-flip");
+
+        // 使用 SugarCube 官方跳转方法
+        setTimeout(() => {
+          $passage.removeClass("page-flip"); // 清理动画状态
+          Engine.play(target);
+        }, 800);
+      });
+
+      // 输出到页面
+      this.output.appendChild(link);
     }
-    const target = this.args[0];
+  });
 
-    // 创建链接的核心方法
-    const link = document.createElement("a");
-    link.href = "javascript:;";
-    link.className = "link-internal bookflip-link";
-
-    // 关键修复点：正确获取内容
-    link.innerHTML = this.payload[0].contents;
-
-    // 点击事件处理
-    link.addEventListener("click", () => {
-      const $passage = $(document).find(".passage:visible");
-
-      // 触发翻页动画
-      $passage.addClass("page-flip");
-
-      // 使用 SugarCube 官方跳转方法
-      setTimeout(() => {
-        $passage.removeClass("page-flip"); // 清理动画状态
-        Engine.play(target);
-      }, 800);
-    });
-
-    // 输出到页面
-    this.output.appendChild(link);
-  }
-});
+//   // 创建宠物状态栏组件
+// UIBar.add("宠物状态", function () {
+//     return `
+//     <div id="pet-status-panel">
+//       <h3>第 ${State.variables.time} 年</h3>
+//       <p><strong>${State.variables.name}</strong></p>
+//       <ul>
+//         <li>力量：${State.variables.str}</li>
+//         <li>智力：${State.variables.int}</li>
+//         <li>体质：${State.variables.con}</li>
+//         <li>魅力：${State.variables.app}</li>
+//       </ul>
+//       <p>体力：</p>
+//       <div class="stamina-bar">
+//         <div class="stamina-fill" style="width: ${(State.variables.hp / State.variables.maxhp) * 100}%;"></div>
+//       </div>
+//       <p><small>${State.variables.hp} / ${State.variables.maxhp}</small></p>
+//     </div>
+//     `;
+// });
 

@@ -43,3 +43,77 @@
   }
 
     /* 翻页结束 */
+
+  /* 面板ui */
+  #pet-status-panel {
+    border: 2px solid #007acc;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    color: white;
+  }
+
+  #pet-status-panel h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #007acc;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+
+  #pet-status-panel p,
+  #pet-status-panel ul,
+  #pet-status-panel li,
+  #pet-status-panel small {
+    color: white;
+  }
+
+  #pet-status-panel ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 6px 0;
+  }
+
+  #pet-status-panel li {
+    font-size: 14px;
+    margin: 4px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;  /* 控制标签和值的间距 */
+    padding-left: 8px;
+  }
+
+  #pet-status-panel .stamina-label {
+    margin-top: 8px;
+    margin-bottom: 2px;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 8px;
+  }
+
+  .stamina-bar {
+    width: calc(100% - 16px);
+    height: 14px;
+    background-color: #e0e0e0;
+    border-radius: 7px;
+    overflow: hidden;
+    margin: 0 auto 4px auto;
+    border: 1px solid #bbb;
+  }
+
+  .stamina-fill {
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.3s ease;
+  }
+
+  #pet-status-panel small {
+    font-size: 12px;
+    padding-left: 8px;
+    margin-top: -2px;
+    display: block;
+  }
+
+/* 侧边栏结束 */
+

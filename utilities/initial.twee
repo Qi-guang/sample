@@ -1,17 +1,25 @@
 :: StoryCaption
 <<do>>
-  <<print $name>> <<print "\n\n">>
-
-  精力：<meter min="0" low="$maxhp*0.3" high="$maxhp*0.7" optimum="$maxhp*0.9" max="$maxhp" @value="$hp"></meter>
-  <<print "\n\n">>
-
-  力：$str <<print "\n">>
-  智：$int <<print "\n">>
-  体：$con <<print "\n">>
-  魅：$app <<print "\n">>
+  <div id="pet-status-panel">
+    <h3>第 $time 个霜降期</h3>
+    <p><strong>$name</strong></p>
+    <ul>
+      <li>💪 力量：<span>$str</span></li>
+      <li>💡 智力：<span>$int</span></li>
+      <li>❤️ 体质：<span>$con</span></li>
+      <li>✨ 魅力：<span>$app</span></li>
+    </ul>
+    <div class="stamina-label">精力：</div>
+    <div class="stamina-bar">
+      <div class="stamina-fill" style="width: ($hp / $maxhp) * 100}%;"></div>
+    </div>
+    <small>$hp / $maxhp</small>
+  </div>
 
 
 <</do>>
+
+
 
 :: StoryInit
   <<petSetup>>

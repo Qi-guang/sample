@@ -34,7 +34,6 @@
   <</type>>
 
 :: 正事
-  <<set $time += 1>>
   <<type 40ms skipkey " " >>
     冰雪消融，是工作的时间了，契约的申请堆积如山，坎特雷拉的领土欣欣向荣。<<print "\n">>
     霜降期结束了。<<print "\n">><<print "\n">>
@@ -54,7 +53,6 @@
       同往常一样，公爵大人来到了他的书房。壁炉前有一个崭新的鸟窝，$name<<print _word.random()>>。它赤裸的脚踝上有一条纤细的银色链条，让它可以在小范围内活动。
       <<print "\n">>公爵大人坐在书桌前，<<if $doc == 0>>开始<<else>>继续<</if>>批阅堆积如山的文书。
       <<print "\n\n">>
-      <<set $doc += 1>>
       /* <<set _roll to random(1, $docNum)>> */
       <<set _roll = 1>>
       <<switch _roll>>
@@ -62,7 +60,7 @@
           <blockquote>“流浪的地狱犬闯入法庭，声称自己是上一任大法官的转世，要求恢复自己的职位。”</blockquote><<print "\n">><<print "\n">>
           <div id="selection">
             <<link "→ 封地狱犬做大法官">>
-              <<set $eventId = 1>>
+              /* <<set $eventId[$doc] = 1>> */
               <<replace "#selection">>
                 <<type 40ms skipkey " " >>
                   公爵大人签署了任命书，封地狱犬做大法官。<<print "\n">><<print "\n">>
@@ -161,9 +159,9 @@
             <<link "→ 要不你们仨结婚吧">>
               <<replace "#selection">>
                 <<type 40ms skipkey " " >>
-                  你说的这个朋友……这不重要，公爵大人下令为这三人赐婚。<<print "\n">>
+                  你说的这个朋友，是不是……算了，无所谓，公爵大人下令为这三人赐婚。<<print "\n">>
                   只要结婚了，情敌啊理想型啊就都不重要了，不是吗？<<print "\n">><<print "\n">>
-                  $name：“那你呢，坎特雷拉？你的理想型是什么样的？”<<print "\n">><<print "\n">>
+                  $name：“那你呢，坎特雷拉，你的理想型是什么样的？”<<print "\n">><<print "\n">>
 
                   $name的魅力+3<<print "\n">>
                   $name的邪恶值+1
@@ -179,13 +177,18 @@
 
           </div>
 
+        <<case 3>>
+          <blockquote>“”</blockquote>
+
+
 
       <</switch>>
-
+      <<set $doc += 1>>
     <<else>>
-      时间飞逝，当公爵大人放下羽笔的时候，霜降期已经再次降临了。<<print "\n">><<print "\n">>
+      时间飞逝，当公爵大人放下羽笔的时候，霜降期已经再次来临了。<<print "\n">><<print "\n">>
 
       <<bookflipgoto "第一页">>该休息了。<</bookflipgoto>>
+      <<set $time += 1>>
     <</if>>
   <</type>>
 
