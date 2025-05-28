@@ -29,3 +29,8 @@
 
   <<set $stow = true>>
 <</widget>>
+
+:: goOutSetup [widget]
+<<widget "goOutSetup">>
+  <<set $together = false>>
+<</widget>>
