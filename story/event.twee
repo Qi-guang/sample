@@ -8,7 +8,6 @@
     <</switch>>
   <</for>>
 
-
   <<set $eventId = []>>
 
 :: newSeason [widget]
@@ -16,5 +15,6 @@
   <<set $doc = 0>>
   <<set $moreClinic = false>>
   <<set $med = false>>
+  <<set $together = false>>
 <</widget>>
 

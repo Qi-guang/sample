@@ -220,7 +220,7 @@
         <<replace "#selection">>
           <<type 40ms skipkey " " >>
             <<if $med>>
-              医生冷酷地表示，在这个的账单结清之前，他不会为坎特雷拉公爵府提供更多的药品。<<print "\n">>
+              医生冷酷地表示，在这个活跃期的账单结清之前，他不会为坎特雷拉公爵府提供更多的药品。<<print "\n">>
               这个小气鬼。<<print "\n">><<print "\n">>
 
               <div id="selection2">
