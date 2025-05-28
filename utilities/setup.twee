@@ -23,7 +23,7 @@
 <<widget "miscSetup">>
   <<set $introduction = true>> // 是否可以做自我介绍
   <<set $badPlusCount = 0>> // 每个霜降期最多可以通过打招呼增加3点好感
-  <<set $eventId = [0, 0, 0]>> // 事件反馈
+  <<set $eventId = []>> // 事件反馈
   <<set $doc = 0>> // 批阅文书次数
   <<set $docNum = 10>> // 文书数量
 
@@ -32,5 +32,8 @@
 
 :: goOutSetup [widget]
 <<widget "goOutSetup">>
-  <<set $together = false>>
+  <<set $together = false>> // 和鸟一起出门
+  <<set $moreClinic = false>> // 在诊所办更多事
+  <<set $med = false>> // 是否买过药
+  <<set $medNum = 0>> // 药品数量
 <</widget>>

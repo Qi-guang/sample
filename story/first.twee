@@ -11,8 +11,9 @@
 
 :: 第一页
   <<type 40ms skipkey " ">>
-    <h1>第$time个霜降期</h1><<print "\n">><<print "\n">><<set $doc = 0>>
+    <h1>第$time个霜降期</h1><<print "\n">><<print "\n">>
     <<include "workOutcome">>
+    <<newSeason>>
     <<print $name>>安静地坐在笼子里的秋千上。它长长的黑色睡袍垂落到脚踝，微微低着头，不知道在想什么。<<print "\n">><<print "\n">>
 
     <div id="selection">

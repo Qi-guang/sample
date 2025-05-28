@@ -1,11 +1,20 @@
 :: workOutcome
-  <<switch $eventId>>
-    <<case 0>>
-      <<print "">>
-    <<case 1>>
-      <<print "听说那位地狱犬法官的三个头在法庭上吵起来了，最终也没得出个结果，于是犯人既要坐牢又要被砍头还要被流放。\n\n">>
+  <<for _i, _id range $eventId>>
+    <<switch _id>>
+      <<case 1>>
+        <<print "听说那位地狱犬法官的三个头在法庭上吵起来了，最终也没得出个结果，于是犯人既要坐牢又要被砍头还要被流放。\n\n">>
 
 
-  <</switch>>
+    <</switch>>
+  <</for>>
 
-  <<set $eventId = 0>>
+
+  <<set $eventId = []>>
+
+:: newSeason [widget]
+<<widget "newSeason">>
+  <<set $doc = 0>>
+  <<set $moreClinic = false>>
+  <<set $med = false>>
+<</widget>>
+

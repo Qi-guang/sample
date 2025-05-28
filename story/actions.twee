@@ -60,7 +60,7 @@
           <blockquote>“流浪的地狱犬闯入法庭，声称自己是上一任大法官的转世，要求恢复自己的职位。”</blockquote><<print "\n">><<print "\n">>
           <div id="selection">
             <<link "→ 封地狱犬做大法官">>
-              /* <<set $eventId[$doc] = 1>> */
+              <<set $eventId.push(1)>>
               <<replace "#selection">>
                 <<type 40ms skipkey " " >>
                   公爵大人签署了任命书，封地狱犬做大法官。<<print "\n">><<print "\n">>
@@ -207,16 +207,63 @@
 
 :: 诊所
   <<type 40ms skipkey " " >>
-    你<<if $together>>带着$name一起<</if>>来到了诊所。戴着鸟嘴面具的医生看了你<<if $together>>们两个<</if>>一眼，沙哑的声音从面具后传来：“需要什么？”
+    <<if $moreClinic>>
+      医生平静地问：“还有什么事？”
+    <<else>>
+      你<<if $together>>带着$name一起<</if>>来到了诊所。戴着鸟嘴面具的医生看了你<<if $together>>们两个<</if>>一眼，沙哑的声音从面具后传来：“需要什么？”
+    <</if>>
+
     <<print "\n">><<print "\n">>
 
     <div id="selection">
       <<link "→ 买药">>
         <<replace "#selection">>
           <<type 40ms skipkey " " >>
-            “买药。”公爵大人简洁地回答道。
+            <<if $med>>
+              医生冷酷地表示，在这个的账单结清之前，他不会为坎特雷拉公爵府提供更多的药品。<<print "\n">>
+              这个小气鬼。<<print "\n">><<print "\n">>
 
-            <<bookflipgoto "办公">>公爵大人继续处理公务。<</bookflipgoto>>
+              <div id="selection2">
+                <<link "→ 回去吧">>
+                  <<replace "#selection2">>
+                    <<type 40ms skipkey " " >>
+                      <<bookflipgoto "第一页">>公爵大人离开了诊所。<</bookflipgoto>><<print "\n">>
+                      <<set $time += 1>>
+                    <</type>>
+                  <</replace>>
+                <</link>><<print "\n">>
+                <<bookflipgoto "诊所">>→ 还有别的事<</bookflipgoto>>
+              </div>
+            <<else>>
+              <<set $medNum += 5>>
+              “买药。”公爵大人简洁地回答道。<<print "\n">>
+              医生甚至没有多问他要买什么药，斗篷下的手迅速地在桌上摆出一排药瓶。这片领地上的每个人都知道公爵大人有了新宠。<<print "\n">>
+              领地的主人买药当然不需要自己掏钱，甚至他亲自前来都只是一种情趣。<<print "\n">>
+
+              <<if $together>>
+                <<print "\n">>
+                $name看着桌上的药瓶：“……这些是给我用的吗？”<<print "\n">>
+                公爵大人只是微笑：“这可都是好东西。”<<print "\n">>
+              <</if>>
+              <<print "\n">>
+              药瓶被收下，诊所的主人摆出了送客的态度。<<print "\n">><<print "\n">>
+
+              <div id="selection2">
+                <<link "→ 回去吧">>
+                  <<replace "#selection2">>
+                    <<type 40ms skipkey " " >>
+                      <<bookflipgoto "第一页">>公爵大人离开了诊所。<</bookflipgoto>><<print "\n">>
+                      <<set $time += 1>>
+                    <</type>>
+                  <</replace>>
+                <</link>><<print "\n">>
+                <<bookflipgoto "诊所">>→ 还有别的事<</bookflipgoto>>
+              </div>
+
+              <<set $moreClinic = true>>
+              <<set $med = true>>
+            <</if>>
+
           <</type>>
         <</replace>>
       <</link>><<print "\n">>
