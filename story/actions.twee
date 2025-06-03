@@ -199,6 +199,7 @@
 
     要去哪里呢？<<print "\n">>
     <<bookflipgoto "诊所">>→ 诊所<</bookflipgoto>><<print "\n">>
+    <<bookflipgoto "竞技场">>→ 竞技场<</bookflipgoto>><<print "\n">>
 
     <<print "\n">>
 
@@ -268,4 +269,38 @@
         <</replace>>
       <</link>><<print "\n">>
     </div>
+  <</type>>
+
+:: 竞技场
+  <<type 40ms skipkey " " >>
+    <<set _a = $demon.random()>>
+    <<set _b = $demon.random()>>
+    公爵大人<<if $together>>带着$name一起<</if>>来到了领地中最大的竞技场，恶魔决斗正如火如荼地进行着————不光是恶魔间的决斗，异种族的奴隶在这里也不是什么珍稀生物。<<print "\n">><<print "\n">>
+    今天的决斗双方是：<<print "\n">>
+    【红方】<<print _a>><<print "\n">>
+    【蓝方】<<print _b>><<print "\n">>
+    <<if _a == _b>>
+      居然是<<print _a>>之间的内战！<<print "\n">>
+    <</if>>
+    <<print "\n">>
+    <<set _aWin = (500+random(1, 200))/1000>>
+    <<set _bWin = (500-random(1, 200))/1000>>
+    <<set _draw = (300-random(1, 100))/1000>>
+    <<set _aMoney = setup.round(1/_aWin, 1)>>
+    <<set _bMoney = setup.round(1/_bWin, 1)>>
+    <<set _drawMoney = setup.round(1/_draw, 1)>>
+    <<set _outcome = ["红方获胜", "蓝方获胜", "平局"]>>
+    <<set _birdGuess = _outcome.random()>>
+
+    一名侍者端来了红酒与今日的赔率：<<print "\n">>
+    【红方获胜】<<print _aMoney>><<print "\n">>
+    【蓝方获胜】<<print _bMoney>><<print "\n">>
+    【平局】<<print _drawMoney>><<print "\n">>
+
+    <<if $together>>
+      <<print "\n">>$name轻轻地凑近了：“我觉得会是<<print _birdGuess>>。”<<print "\n">>
+    <</if>>
+
+    公爵大人的下注是：
+
   <</type>>

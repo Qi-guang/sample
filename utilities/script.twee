@@ -1,6 +1,10 @@
 :: StoryScript [script]
   Config.passages.nobr = true;
 
+  setup.round = function(number, precision) {
+    return Math.round(+number + "e" + precision) / Math.pow(10, precision);
+  }
+
   Macro.add("bookflipgoto", {
     tags: null,
     handler() {
